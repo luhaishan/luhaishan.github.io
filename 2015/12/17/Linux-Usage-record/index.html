@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="云淡风轻">
 <meta property="og:description" content="使用Kali Linux2.0作为笔记本的主操作系统。安装完毕后由于需要处理日常办公，折腾了一系列的软件，现做些记录。
  安装中文输入法  —-网上教程很多，自己照做的时候出现了中文输入法安装完毕后，无法打开的问题。其中只能自己切换GUI环境，从Kali默认的Gnome切换到KDE。莫名的又可以使用了，偶尔还是会出现在部分应用程序中无法切换到中文输入法的情况。通过在另外一个应用程序中切换到中文输入">
-<meta property="og:updated_time" content="2015-12-17T13:22:49.847Z">
+<meta property="og:updated_time" content="2015-12-17T13:25:15.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux使用记录">
 <meta name="twitter:description" content="使用Kali Linux2.0作为笔记本的主操作系统。安装完毕后由于需要处理日常办公，折腾了一系列的软件，现做些记录。
@@ -96,11 +96,18 @@
 <p><strong> 安装Firefox </strong><br><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># echo -e <span class="string">"\ndeb http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main"</span> | tee -a /etc/apt/sources.list &gt; /<span class="built_in">dev</span>/<span class="built_in">null</span></span><br><span class="line"># apt-<span class="built_in">key</span> adv --recv-<span class="built_in">keys</span> --keyserver keyserver.ubuntu.com C1289A29</span><br><span class="line"># apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line"># apt-<span class="built_in">get</span> install firefox-mozilla-build</span><br></pre></td></tr></table></figure></p>
 <p><strong> 命令行使用VPN </strong></p>
 <ol>
-<li>首先安装VPN客户端<br><code>apt-get install pptp-linux</code></li>
-<li>命令行下拨号连接VPN服务器<br><code>pptp-setup --create &lt;your_vpn_name&gt; --server &lt;server_ip&gt; --username &lt;username&gt; --password &lt;password&gt; --encrypt --start</code></li>
-<li>添加路由<br><code>route add default dev ppp0</code></li>
-<li>开启或关闭VPN<br><code>pon &lt;your_vpn_name&gt;
-poff &lt;your_vpn_name&gt;</code></li>
+<li><p>首先安装VPN客户端</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="keyword">get</span> install pptp-linux</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命令行下拨号连接VPN服务器</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">pptp</span><span class="literal">-</span><span class="comment">setup</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">create</span> &lt;<span class="comment">your_vpn_name</span>&gt; <span class="literal">-</span><span class="literal">-</span><span class="comment">server</span> &lt;<span class="comment">server_ip</span>&gt; <span class="literal">-</span><span class="literal">-</span><span class="comment">username</span> &lt;<span class="comment">username</span>&gt; <span class="literal">-</span><span class="literal">-</span><span class="comment">password</span> &lt;<span class="comment">password</span>&gt; <span class="literal">-</span><span class="literal">-</span><span class="comment">encrypt</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">start</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加路由</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">route</span> add <span class="default"><span class="keyword">default</span> dev ppp0</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开启或关闭VPN</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pon <span class="tag">&lt;<span class="title">your_vpn_name</span>&gt;</span></span><br><span class="line">poff <span class="tag">&lt;<span class="title">your_vpn_name</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 <hr>
 <h2 id="u4F7F_u7528_u8FC7_u7A0B_u4E2D_u7684_u95EE_u9898_u53CA_u89E3_u51B3_uFF1A"><a href="#u4F7F_u7528_u8FC7_u7A0B_u4E2D_u7684_u95EE_u9898_u53CA_u89E3_u51B3_uFF1A" class="headerlink" title="使用过程中的问题及解决："></a>使用过程中的问题及解决：</h2><p>Q：kali linux无线网络经常上不了网，需要重启网络<br>A：/etc/init.d/network-manager restart</p>
