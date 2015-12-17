@@ -61,9 +61,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Linux使用记录" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Linux-Usage-record" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/12/17/Linux使用记录/" class="article-date">
+    <a href="/2015/12/17/Linux-Usage-record/" class="article-date">
   <time datetime="2015-12-17T02:41:41.000Z" itemprop="datePublished">2015-12-17</time>
 </a>
     
@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/17/Linux使用记录/">Linux使用记录</a>
+      <a class="article-title" href="/2015/12/17/Linux-Usage-record/">Linux使用记录</a>
     </h1>
   
 
@@ -83,21 +83,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#Linux使用记录</p>
-<p>##常用软件安装<br>安装KDE桌面环境、（GUI）<br>中文输入法（Pinyin）<br>VMware虚拟机<br>dbvis（数据库管理软件）<br>xmind（思维导图软件）<br>Shotwell（图片管理）<br>cheese(拍照软件)</p>
+        <h1 id="Linux_u4F7F_u7528_u8BB0_u5F55"><a href="#Linux_u4F7F_u7528_u8BB0_u5F55" class="headerlink" title="Linux使用记录"></a>Linux使用记录</h1><h2 id="u5E38_u7528_u8F6F_u4EF6_u5B89_u88C5"><a href="#u5E38_u7528_u8F6F_u4EF6_u5B89_u88C5" class="headerlink" title="常用软件安装"></a>常用软件安装</h2><p>安装KDE桌面环境、（GUI）<br>中文输入法（Pinyin）<br>VMware虚拟机<br>dbvis（数据库管理软件）<br>xmind（思维导图软件）<br>Shotwell（图片管理）<br>cheese(拍照软件)</p>
 <hr>
-<p>##Linux命令<br><strong>cal</strong> 命令，以日历形式显示当前年月日<br><strong>alias</strong>命令，给命令添加别名。<br>例：alias ll=”ls -l”，重启后失效。<br>将要改的别名添加到~/.bashrc文件后，再执行<strong>source ~/.bashrc</strong>即可</p>
-<p>##Linux下各类软件安装包的安装<br>.deb安装包   安装命令：dpkg -i 文件名.deb</p>
-<p>##Linux下文件的压缩与解压<br>.tar.gz    命令选项：tar xzvf</p>
-<p>##Linux下查看可使用的shell： cat /etc/shells<br>查看当前的shell： echo $SHELL</p>
+<h2 id="Linux_u547D_u4EE4"><a href="#Linux_u547D_u4EE4" class="headerlink" title="Linux命令"></a>Linux命令</h2><p><strong>cal</strong> 命令，以日历形式显示当前年月日<br><strong>alias</strong>命令，给命令添加别名。<br>例：alias ll=”ls -l”，重启后失效。<br>将要改的别名添加到~/.bashrc文件后，再执行<strong>source ~/.bashrc</strong>即可</p>
+<h2 id="Linux_u4E0B_u5404_u7C7B_u8F6F_u4EF6_u5B89_u88C5_u5305_u7684_u5B89_u88C5"><a href="#Linux_u4E0B_u5404_u7C7B_u8F6F_u4EF6_u5B89_u88C5_u5305_u7684_u5B89_u88C5" class="headerlink" title="Linux下各类软件安装包的安装"></a>Linux下各类软件安装包的安装</h2><p>.deb安装包   安装命令：dpkg -i 文件名.deb</p>
+<h2 id="Linux_u4E0B_u6587_u4EF6_u7684_u538B_u7F29_u4E0E_u89E3_u538B"><a href="#Linux_u4E0B_u6587_u4EF6_u7684_u538B_u7F29_u4E0E_u89E3_u538B" class="headerlink" title="Linux下文件的压缩与解压"></a>Linux下文件的压缩与解压</h2><p>.tar.gz    命令选项：tar xzvf</p>
+<h2 id="Linux_u4E0B_u67E5_u770B_u53EF_u4F7F_u7528_u7684shell_uFF1A_cat_/etc/shells"><a href="#Linux_u4E0B_u67E5_u770B_u53EF_u4F7F_u7528_u7684shell_uFF1A_cat_/etc/shells" class="headerlink" title="Linux下查看可使用的shell： cat /etc/shells"></a>Linux下查看可使用的shell： cat /etc/shells</h2><p>查看当前的shell： echo $SHELL</p>
 <hr>
-<p>##使用过程中的问题及解决：<br>Q：kali linux无线网络经常上不了网，需要重启网络<br>A：/etc/init.d/network-manager restart</p>
+<h2 id="u4F7F_u7528_u8FC7_u7A0B_u4E2D_u7684_u95EE_u9898_u53CA_u89E3_u51B3_uFF1A"><a href="#u4F7F_u7528_u8FC7_u7A0B_u4E2D_u7684_u95EE_u9898_u53CA_u89E3_u51B3_uFF1A" class="headerlink" title="使用过程中的问题及解决："></a>使用过程中的问题及解决：</h2><p>Q：kali linux无线网络经常上不了网，需要重启网络<br>A：/etc/init.d/network-manager restart</p>
 <p>Q：Linux打开txt文件中文乱码<br>A: Linux显示在Windows编辑过的中文就会显示乱码是由于两个操作系统使用的编码不同所致。Linux下使用的编码是utf8，而Windows使用的是gb18030。在附件终端中，进入到txt文件所在目录，使用命令符“iconv -f gb18030  -t utf8 1.txt -o 2.txt”把gb18030编码的1.txt转换成utf8的2.txt。这样2.txt就成为Linux支持的编码。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/17/Linux使用记录/" data-id="cii9n9w1y000198v1dfitq0tz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/17/Linux-Usage-record/" data-id="cii9nlr470000dov1krt1qda0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -195,7 +194,7 @@
       <ul>
         
           <li>
-            <a href="/2015/12/17/Linux使用记录/">Linux使用记录</a>
+            <a href="/2015/12/17/Linux-Usage-record/">Linux使用记录</a>
           </li>
         
           <li>
