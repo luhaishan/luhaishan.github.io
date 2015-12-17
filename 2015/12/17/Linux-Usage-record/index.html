@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="云淡风轻">
 <meta property="og:description" content="使用Kali Linux2.0作为笔记本的主操作系统。安装完毕后由于需要处理日常办公，折腾了一系列的软件，现做些记录。
  安装中文输入法  —-网上教程很多，自己照做的时候出现了中文输入法安装完毕后，无法打开的问题。其中只能自己切换GUI环境，从Kali默认的Gnome切换到KDE。莫名的又可以使用了，偶尔还是会出现在部分应用程序中无法切换到中文输入法的情况。通过在另外一个应用程序中切换到中文输入">
-<meta property="og:updated_time" content="2015-12-17T05:01:29.622Z">
+<meta property="og:updated_time" content="2015-12-17T13:22:49.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux使用记录">
 <meta name="twitter:description" content="使用Kali Linux2.0作为笔记本的主操作系统。安装完毕后由于需要处理日常办公，折腾了一系列的软件，现做些记录。
@@ -88,13 +88,22 @@
         <p>使用Kali Linux2.0作为笔记本的主操作系统。安装完毕后由于需要处理日常办公，折腾了一系列的软件，现做些记录。</p>
 <p><strong> 安装中文输入法 </strong> —-网上教程很多，自己照做的时候出现了中文输入法安装完毕后，无法打开的问题。其中只能自己切换GUI环境，从Kali默认的Gnome切换到KDE。莫名的又可以使用了，偶尔还是会出现在部分应用程序中无法切换到中文输入法的情况。通过在另外一个应用程序中切换到中文输入法，再返回刚才出问题的应用程序中，问题部分得到解决。</p>
 <p><strong> 安装WPS for Linux办公软件 </strong> —-避免不了需要处理word、Excel文档的时候，官网(<a href="http://linux.wps.cn/)。其中，WPS的中文输入还待解决！" target="_blank" rel="external">http://linux.wps.cn/)。其中，WPS的中文输入还待解决！</a></p>
-<p><strong> 安装Xmind思维导图软件 </strong></p>
+<p><strong> 安装Xmind思维导图软件 </strong> —-读书做笔记的好帮手</p>
 <p><strong> Shotwell图片管理软件 </strong></p>
 <p><strong> cheese拍照软件 </strong></p>
 <p><strong> VMware虚拟机 </strong></p>
 <p><strong> dbvis数据库管理软件 </strong></p>
+<p><strong> 安装Firefox </strong><br><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># echo -e <span class="string">"\ndeb http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main"</span> | tee -a /etc/apt/sources.list &gt; /<span class="built_in">dev</span>/<span class="built_in">null</span></span><br><span class="line"># apt-<span class="built_in">key</span> adv --recv-<span class="built_in">keys</span> --keyserver keyserver.ubuntu.com C1289A29</span><br><span class="line"># apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line"># apt-<span class="built_in">get</span> install firefox-mozilla-build</span><br></pre></td></tr></table></figure></p>
+<p><strong> 命令行使用VPN </strong></p>
+<ol>
+<li>首先安装VPN客户端<br><code>apt-get install pptp-linux</code></li>
+<li>命令行下拨号连接VPN服务器<br><code>pptp-setup --create &lt;your_vpn_name&gt; --server &lt;server_ip&gt; --username &lt;username&gt; --password &lt;password&gt; --encrypt --start</code></li>
+<li>添加路由<br><code>route add default dev ppp0</code></li>
+<li>开启或关闭VPN<br><code>pon &lt;your_vpn_name&gt;
+poff &lt;your_vpn_name&gt;</code></li>
+</ol>
 <hr>
-<p>##使用过程中的问题及解决：<br>Q：kali linux无线网络经常上不了网，需要重启网络<br>A：/etc/init.d/network-manager restart</p>
+<h2 id="u4F7F_u7528_u8FC7_u7A0B_u4E2D_u7684_u95EE_u9898_u53CA_u89E3_u51B3_uFF1A"><a href="#u4F7F_u7528_u8FC7_u7A0B_u4E2D_u7684_u95EE_u9898_u53CA_u89E3_u51B3_uFF1A" class="headerlink" title="使用过程中的问题及解决："></a>使用过程中的问题及解决：</h2><p>Q：kali linux无线网络经常上不了网，需要重启网络<br>A：/etc/init.d/network-manager restart</p>
 <p>Q：Linux打开txt文件中文乱码<br>A: Linux显示在Windows编辑过的中文就会显示乱码是由于两个操作系统使用的编码不同所致。Linux下使用的编码是utf8，而Windows使用的是gb18030。在附件终端中，进入到txt文件所在目录，使用命令符“iconv -f gb18030  -t utf8 1.txt -o 2.txt”把gb18030编码的1.txt转换成utf8的2.txt。这样2.txt就成为Linux支持的编码。</p>
 
       
