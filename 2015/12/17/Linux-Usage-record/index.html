@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="云淡风轻">
 <meta property="og:description" content="使用Kali Linux2.0作为笔记本的主操作系统。安装完毕后由于需要处理日常办公，折腾了一系列的软件，现做些记录。
  安装中文输入法  —-网上教程很多，自己照做的时候出现了中文输入法安装完毕后，无法打开的问题。其中只能自己切换GUI环境，从Kali默认的Gnome切换到KDE。莫名的又可以使用了，偶尔还是会出现在部分应用程序中无法切换到中文输入法的情况。通过在另外一个应用程序中切换到中文输入">
-<meta property="og:updated_time" content="2015-12-17T13:25:15.839Z">
+<meta property="og:updated_time" content="2015-12-18T03:20:08.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux使用记录">
 <meta name="twitter:description" content="使用Kali Linux2.0作为笔记本的主操作系统。安装完毕后由于需要处理日常办公，折腾了一系列的软件，现做些记录。
@@ -109,6 +109,7 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pon <span class="tag">&lt;<span class="title">your_vpn_name</span>&gt;</span></span><br><span class="line">poff <span class="tag">&lt;<span class="title">your_vpn_name</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<p>后面使用的时候，首先pon <your_vpn_name>开启，然后在ifconfig中查看ppp0有没有开启成功，开启成功后，route add default dev ppp0添加路由，至此完成。</your_vpn_name></p>
 <hr>
 <h2 id="u4F7F_u7528_u8FC7_u7A0B_u4E2D_u7684_u95EE_u9898_u53CA_u89E3_u51B3_uFF1A"><a href="#u4F7F_u7528_u8FC7_u7A0B_u4E2D_u7684_u95EE_u9898_u53CA_u89E3_u51B3_uFF1A" class="headerlink" title="使用过程中的问题及解决："></a>使用过程中的问题及解决：</h2><p>Q：kali linux无线网络经常上不了网，需要重启网络<br>A：/etc/init.d/network-manager restart</p>
 <p>Q：Linux打开txt文件中文乱码<br>A: Linux显示在Windows编辑过的中文就会显示乱码是由于两个操作系统使用的编码不同所致。Linux下使用的编码是utf8，而Windows使用的是gb18030。在附件终端中，进入到txt文件所在目录，使用命令符“iconv -f gb18030  -t utf8 1.txt -o 2.txt”把gb18030编码的1.txt转换成utf8的2.txt。这样2.txt就成为Linux支持的编码。</p>
@@ -116,7 +117,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/17/Linux-Usage-record/" data-id="cii9nlr470000dov1krt1qda0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/17/Linux-Usage-record/" data-id="ciib989y40000zwv1u9xb23gh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -125,6 +126,20 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/12/18/Introduction2ComputerScience/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Introduction2ComputerScience
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -156,7 +171,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -166,6 +181,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/12/18/Introduction2ComputerScience/">Introduction2ComputerScience</a>
+          </li>
         
           <li>
             <a href="/2015/12/17/Linux-Usage-record/">Linux使用记录</a>
