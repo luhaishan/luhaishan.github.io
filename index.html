@@ -61,6 +61,109 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-计算机启动原理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/05/计算机启动原理/" class="article-date">
+  <time datetime="2016-01-05T01:21:19.000Z" itemprop="datePublished">2016-01-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/05/计算机启动原理/">计算机启动原理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>计算机的整个启动过程分为四个阶段：</p>
+<h3 id="u7B2C_u4E00_u9636_u6BB5_uFF1A__u8BA1_u7B97_u673A_u52A0_u7535"><a href="#u7B2C_u4E00_u9636_u6BB5_uFF1A__u8BA1_u7B97_u673A_u52A0_u7535" class="headerlink" title="第一阶段： 计算机加电"></a>第一阶段： 计算机加电</h3><p>计算机加电后，主板的电源系统供电，南桥启动，北桥启动，复位CPU的reset针脚，执行已经设置好的地址上的程序，读取BIOS。<br>注：南北桥芯片</p>
+<blockquote>
+<p>北桥芯片，是主板上离CPU最近的芯片。主要负责CPU与内存之间的数据交换，并控制AGP、PCI数据在其内部的传输，是主板性能的主要决定因素。<br>南桥芯片，主要负责I/O接口登一些外设接口的控制、IDE设备的控制以及附加功能等。南桥芯片不与处理器直接相连，而是通过一定的方式与北桥芯片相连。</p>
+</blockquote>
+<h3 id="u7B2C_u4E8C_u9636_u6BB5_BIOS_u786C_u4EF6_u81EA_u68C0_28Power-On_Self-Test_29"><a href="#u7B2C_u4E8C_u9636_u6BB5_BIOS_u786C_u4EF6_u81EA_u68C0_28Power-On_Self-Test_29" class="headerlink" title="第二阶段 BIOS硬件自检(Power-On Self-Test)"></a>第二阶段 BIOS硬件自检(Power-On Self-Test)</h3><p>BIOS(Basic Input/Output System),BIOS中存放的程序包括：</p>
+<ul>
+<li>CMOS设置程序： 引导过程中，通过特殊热键启动，进行设置后，存入CMOS RAM中</li>
+<li>自诊断程序： 通过读取CMOS RAM中的内容识别硬件配置，并对其进行自检和初始化</li>
+<li>系统自动装载程序： 在系统自检成功后，将磁盘相对0道0扇区上的引导程序装入内存使其运行</li>
+<li>主要I/O驱动程序和中断服务： BIOS和硬件直接打交道，需要加载I/O驱动程序</li>
+</ul>
+<ol>
+<li><p>首先进行硬件自检<br>如果出问题，主板回发出不同含义的蜂鸣，启动中止;没有问题，屏幕就会显示出CPU、内存、硬盘登信息。</p>
+</li>
+<li><p>选择下一阶段的启动程序并将控制权交给它<br>BIOS有一个外部存储设备的排序，排在前面的设备就是优先转移控制权的设备。BIOS通过系统自动装载程序读取启动设备中的主引导记录MBR，并放入指定位置（0x7c000）内存中。</p>
+</li>
+</ol>
+<h3 id="u7B2C_u4E09_u9636_u6BB5__u52A0_u8F7D_u4E3B_u5F15_u5BFC_u7A0B_u5E8F_28MBR_29"><a href="#u7B2C_u4E09_u9636_u6BB5__u52A0_u8F7D_u4E3B_u5F15_u5BFC_u7A0B_u5E8F_28MBR_29" class="headerlink" title="第三阶段 加载主引导程序(MBR)"></a>第三阶段 加载主引导程序(MBR)</h3><p>MBR位于启动设备的第一个扇区，512个字节，由3个部分组成：</p>
+<ol>
+<li>主引导程序 负责从活动分区中装载，并运行系统引导程序。</li>
+<li>硬盘分区表(DPT) 占64个字节,含四个分区项，每个分区表项长16个字节。</li>
+<li>分区有效标志 0x55aa或0xaa55，取决于处理器是小端模式还是大端模式。如果该标志错误系统不能启动。</li>
+</ol>
+<h3 id="u7B2C_u56DB_u9636_u6BB5__u52A0_u8F7D_u6B21_u5F15_u5BFC_u7A0B_u5E8F_28_29"><a href="#u7B2C_u56DB_u9636_u6BB5__u52A0_u8F7D_u6B21_u5F15_u5BFC_u7A0B_u5E8F_28_29" class="headerlink" title="第四阶段 加载次引导程序()"></a>第四阶段 加载次引导程序()</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/05/计算机启动原理/" data-id="cimmsxvv500008av1nsbw5vac" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Fun-in-linux-terminal" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/26/Fun-in-linux-terminal/" class="article-date">
+  <time datetime="2015-12-26T00:54:49.000Z" itemprop="datePublished">2015-12-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/26/Fun-in-linux-terminal/">Fun_in_linux_terminal</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文介绍Linux终端下一些好玩的应用</p>
+<ol>
+<li>sl命令<br>安装：<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">apt</span>-<span class="preprocessor">get</span> install <span class="literal">sl</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/12/26/Fun-in-linux-terminal/" data-id="cimmsxvvu00088av1quxivg8u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-大数据综述" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/12/22/大数据综述/" class="article-date">
@@ -150,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/22/大数据综述/" data-id="ciigy7xo20000ygv18fl7i1sc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/22/大数据综述/" data-id="cimmsxvvf00018av1iqx3h72q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大数据/">大数据</a></li></ul>
@@ -245,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/18/Introduction2ComputerScience/" data-id="ciigy7xoq0006ygv1abwv296n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/18/Introduction2ComputerScience/" data-id="cimmsxvvt00078av1dkv8a9lj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -301,18 +404,19 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pon <span class="tag">&lt;<span class="title">your_vpn_name</span>&gt;</span></span><br><span class="line">poff <span class="tag">&lt;<span class="title">your_vpn_name</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>后面使用的时候，首先pon <your_vpn_name>开启，然后在ifconfig中查看ppp0有没有开启成功，开启成功后，route add default dev ppp0添加路由，至此完成。</your_vpn_name></p>
+<p>后面使用的时候，首先pon <your_vpn_name>开启，然后在ifconfig中查看ppp0有没有开启成功，开启成功后:<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">route</span> del <span class="default"><span class="keyword">default</span></span></span><br><span class="line"><span class="title">route</span> add <span class="default"><span class="keyword">default</span> dev ppp0</span></span><br></pre></td></tr></table></figure></your_vpn_name></p>
+<p>添加路由，至此完成。vpn信息保存在/etc/ppp/peers/目录下，用户名密码写在/etc/ppp/chap-secrets文件里</p>
 <hr>
 <h2 id="u4F7F_u7528_u8FC7_u7A0B_u4E2D_u7684_u95EE_u9898_u53CA_u89E3_u51B3_uFF1A"><a href="#u4F7F_u7528_u8FC7_u7A0B_u4E2D_u7684_u95EE_u9898_u53CA_u89E3_u51B3_uFF1A" class="headerlink" title="使用过程中的问题及解决："></a>使用过程中的问题及解决：</h2><p>Q：<strong> kali linux无线网络经常上不了网，需要重启网络 </strong><br>A：/etc/init.d/network-manager restart</p>
 <p>Q：<strong> Linux打开txt文件中文乱码 </strong><br>A: Linux显示在Windows编辑过的中文就会显示乱码是由于两个操作系统使用的编码不同所致。Linux下使用的编码是utf8，而Windows使用的是gb18030。在附件终端中，进入到txt文件所在目录，使用命令符“iconv -f gb18030  -t utf8 1.txt -o 2.txt”把gb18030编码的1.txt转换成utf8的2.txt。这样2.txt就成为Linux支持的编码。</p>
 <p>Q: <strong> Kali Linux如何安装BCM43142网卡驱动</strong> lspci看得到无线网卡信息，为BCM43142,但ifconfig里看不到。 **<br>A： 1、编辑/etc/apt/sources.list 在文件最后加<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb <span class="string">http:</span><span class="comment">//http.debian.net/debian/ jessie main contrib non-free</span></span><br></pre></td></tr></table></figure></p>
-<p>—————-2-5都是在终端———————–<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>、 apt-get update</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、apt-get install linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,') broadcom-sta-dkms</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>、modprobe -r b44 b43 b43legacy ssb brcmsmac</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>、modprobe wl</span><br></pre></td></tr></table></figure></p>
+<p>—————-2-5都是在终端———————–<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>、apt-get update</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、apt-get install linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,') broadcom-sta-dkms</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>、modprobe -r b44 b43 b43legacy ssb brcmsmac</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>、modprobe wl</span><br></pre></td></tr></table></figure></p>
 <p>之后重启电脑即可。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/17/Linux-Usage-record/" data-id="ciigy7xoo0003ygv1wgohsqj6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/17/Linux-Usage-record/" data-id="cimmsxvvq00048av1quwvlw5c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -335,7 +439,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数据/">大数据</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数据/">大数据</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -344,7 +448,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a>
+      <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a>
     </div>
   </div>
 
@@ -353,7 +457,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -363,6 +467,14 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/01/05/计算机启动原理/">计算机启动原理</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/26/Fun-in-linux-terminal/">Fun_in_linux_terminal</a>
+          </li>
         
           <li>
             <a href="/2015/12/22/大数据综述/">大数据综述</a>
@@ -388,7 +500,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2015 luhaishan<br>
+      &copy; 2016 luhaishan<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
